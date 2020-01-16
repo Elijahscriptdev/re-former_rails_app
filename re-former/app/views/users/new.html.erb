@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta accept-charset="UTF-8">
-</head>
-<body>
-
-#<form accept-charset="UTF-8" action="/" data-remote="true" method="post">
- # <input name="" type="" value="" />
-  #First name: <input type="text" name="FirstName" value="Mickey"><br>
-#Last name: <input type="text" name="LastName" value="Mouse"><br>
-#<input type="submit" value="Submit">
-#</form>
-
-</body>
+<head> <meta accept-charset = "UTF-8"></head>
+<%= form_with url: users_path do |f| %>
+  <p><label>Your Name: </label></p>
+  <p><%= f.label :username, "Username: " %></p>
+  <%= f.text_field :username %>
+  <p><%= f.label :email, "email: " %></p>
+  <%= f.text_field :email %>
+  <p><%= f.label :password %></p>
+  <%= f.password_field :password %>
+  <p><%= f.submit %></p>
+<% end %>
 </html>

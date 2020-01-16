@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
     before_action only: %i[create new]
 
-    def new
+    def index
 
+    end
+
+    def new
+        @user
     end
 
     def create
