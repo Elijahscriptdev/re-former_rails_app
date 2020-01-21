@@ -17,19 +17,16 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      # flash[:notice] = "Article was successfully edited"
-      redirect_to user_path(@user)
+            redirect_to user_path(@user)
     else
       render 'new'
     end
   end
 
   def create
-    # @user = User.new( username: params[:username], email: params[:email], password: params[:password])
     @user = User.new(user_params)
     if @user.save
-      # flash[:notice] = "User was successfully created"
-      redirect_to user_path(@user)
+      redirect_to new_user_path
     else
       render :new
     end
