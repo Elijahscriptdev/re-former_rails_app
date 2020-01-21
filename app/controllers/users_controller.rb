@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: %i[show edit update]
 
   def index
     @users = User.all
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      #flash[:notice] = "Article was successfully edited"
+      # flash[:notice] = "Article was successfully edited"
       redirect_to user_path(@user)
-  else
+    else
       render 'new'
   end
   end
