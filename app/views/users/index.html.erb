@@ -1,0 +1,13 @@
+
+    <h1>THIS ARE ALL THE EXISTING USERS: </h1>
+
+    <h2><%= link_to 'create user', new_user_path %></h2>
+
+    <%= @users.each do |user| %>
+        <p>User ID: <%= user.id %></p>
+        <p>Username: <%= user.username %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Password: <%= user.password %></p>
+        <p>created at: <%= user.created_at %></p>
+        <p>Updated at: <%= user.updated_at %></p>
+    <% end %>
